@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Mels";
+  src: url("./fonts/Mels-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mels";
+  src: url("./fonts/Mels-Italic.woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mabry Pro";
+  src: url("./fonts/Mabry\ Pro.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mabry Pro";
+  src: url("./fonts/Mabry\ Pro\ Italic.woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mint";
+  src: url("./fonts/Mint/MintGroteskRegularTrial.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mint";
+  src: url("./fonts/Mint/MintGroteskMediumTrial.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Mint";
+  src: url("./fonts/Mint/MintGroteskBoldTrial.woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Mint";
+  src: url("./fonts/Mint/MintGroteskExtraBoldTrial.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Mint";
+  src: url("./fonts/Mint/MintGroteskBlackTrial.woff2");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Mint";
+  src: url("./fonts/Mint/MintGroteskHeavyTrial.woff2");
+  font-weight: 900;
+}

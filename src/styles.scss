@@ -1,0 +1,821 @@
+@import "./fonts.css";
+
+// font variables
+$font-stack: "Mint", Helvetica, Arial, sans-serif;
+$line-height: 160%;
+$font-size-base: 15px;
+$font-size-caption: 0.833em;
+$font-size-body: 1em;
+$font-size-subheading: 1.2em;
+$font-size-title: 1.44em;
+$font-size-heading: 1.728em;
+$font-size-display: 2.074em;
+
+// breakpoints
+$breakpoint-medium: 900px;
+$breakpoint-small: 600px;
+
+// motion variables
+$animation-transition: 250ms;
+$animation-curve: ease-out;
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+// color variables
+$color-black: #0e120d;
+$color-white: #ece8e5;
+$color-gray-10: #d3d3cf;
+$color-gray-50: #827c78;
+$color-gray-100: #222622;
+$color-primary: #ea9325;
+$color-secondary: #10715c;
+$color-tertiary: #1379bc;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1400px;
+  //   max-width: 1920px;
+  //   margin: 0 auto;
+  padding: 0 64px;
+  @media (max-width: 960px) {
+    padding: 0 32px;
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: var(--color-border);
+}
+
+::selection {
+  background: var(--color-border);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #{$color-black};
+    --color-text: #{$color-white};
+    --color-border: #{$color-gray-100};
+    --color-bg-rgb: #{hexToRGB($color-black)};
+    --color-link: #{$color-primary};
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #{$color-white};
+    --color-text: #{$color-black};
+    --color-border: #{$color-gray-10};
+    --color-bg-rgb: #{hexToRGB($color-white)};
+    --color-link: #{$color-tertiary};
+  }
+}
+
+body {
+  font-family: $font-stack;
+  font-feature-settings: "ss04" on, "ss02" on;
+  font-size: $font-size-base;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+p {
+  line-height: $line-height;
+  font-size: $font-size-base;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    transition: outline-offset 0.25s ease;
+    outline-offset: 4px;
+    outline-color: $color-primary;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+}
+
+.skip-content {
+  border-radius: 1000px;
+  position: absolute;
+  background: $color-primary;
+  color: $color-black;
+  padding: 12px 16px;
+  transform: translateY(-300%);
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  left: 40px;
+}
+
+.skip-content:focus-visible {
+  transform: translateY(-15%);
+  @media (max-width: $breakpoint-medium) {
+    transform: translateY(75%);
+  }
+}
+
+header {
+  padding-top: 56px;
+  @media (max-width: $breakpoint-medium) {
+    padding-top: 0px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.logo {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.logo a {
+  display: block;
+  transition: transform ease 0.5s;
+}
+
+.tooltip {
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 4px;
+}
+
+.logo a:active {
+  transform: scale(0.97);
+}
+
+.hero {
+  margin-top: 96px;
+
+  h1:last-child {
+    margin-top: 32px;
+  }
+
+  h1 {
+    font-size: $font-size-title;
+    line-height: 140%;
+    font-weight: 400;
+
+    @media (max-width: $breakpoint-medium) {
+      font-size: $font-size-subheading;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+a.button {
+  padding: 8px 16px;
+  background: $color-primary;
+  color: $color-black;
+  border-radius: 10000px;
+}
+
+a.button:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+footer {
+  margin-top: 120px;
+  margin-bottom: 64px;
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+  p {
+    color: $color-gray-50;
+  }
+}
+
+.section-title {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: $font-size-caption;
+}
+
+.work {
+  margin-top: 120px;
+  @media (max-width: $breakpoint-medium) {
+    margin-top: 24px;
+  }
+  .work-section {
+    margin-bottom: 48px;
+  }
+  .work-section:last-child {
+    margin-bottom: 0px;
+  }
+  .work-title {
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .work-title:not(:first-child) {
+    margin-top: 48px;
+  }
+  .city {
+    color: $color-gray-50;
+  }
+  .work-description {
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+  .work-accordions > * {
+    margin-bottom: 24px;
+  }
+}
+
+// // accordion
+
+// /* Style the accordion section */
+// .accordion-section {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// /* Style the buttons that are used to open and close the accordion panel */
+// .accordion {
+//   background: var(--color-bg);
+//   color: var(--color-text);
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   gap: 8px;
+//   border: none;
+//   outline: none;
+//   transition: background-color 0.6s ease;
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .accordion:focus-visible {
+//     transition: outline-offset 0.25s ease;
+//     outline-offset: 4px;
+//     outline-color: $color-primary;
+//     outline-style: solid;
+//     outline-width: 2px;
+//   }
+// }
+
+// /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+// .accordion:hover {
+//   .accordion-title {
+//     text-decoration: underline;
+//   }
+// }
+
+// /* Style the accordion content title */
+// .accordion-title {
+//   font-family: $font-stack;
+//   font-size: $font-size-base;
+//   font-weight: 400;
+//   line-height: $line-height;
+//   flex-grow: 0;
+//   text-align: left;
+//   svg {
+//     margin-right: 4px;
+//   }
+// }
+
+// .accordion-subtitle {
+//   flex-grow: 0;
+//   font-family: $font-stack;
+//   text-align: right;
+// }
+
+// .accordion-divider {
+//   height: 1px;
+//   flex-grow: 2;
+//   background: var(--color-border);
+//   // background-image: linear-gradient(90deg, var(--color-border) 35.71%, transparent 35.71%, transparent 50%, var(--color-border) 50%, var(--color-border) 85.71%, transparent 85.71%, transparent 100%);
+//   // background-size: 14.00px 14.00px;
+// }
+
+// /* Style the accordion chevron icon */
+// .accordion-icon {
+//   margin-left: auto;
+//   transition: transform 0.1s ease;
+//   fill: var(--color-text);
+// }
+
+// /* Style to rotate icon when state is active */
+// .rotate {
+//   transform: rotate(90deg);
+// }
+
+// /* Style the accordion content panel. Note: hidden by default */
+// .accordion-content {
+//   overflow: hidden;
+//   transition: max-height 200ms ease-in-out;
+// }
+
+// /* Style the accordion content text */
+// .accordion-text {
+//   padding: 12px;
+//   font-family: $font-stack;
+//   line-height: $line-height;
+//   p {
+//     padding-bottom: 24px;
+//   }
+//   ul {
+//     padding-left: 12px;
+//     list-style-type: none;
+//   }
+//   ul li {
+//     position: relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+//     /* use padding-bottom instead of margin-bottom.*/
+//     margin-bottom: 0; /* This overrides previously specified margin-bottom */
+//     padding-bottom: 12px;
+//   }
+
+//   ul li:after {
+//     /* bullets */
+//     content: "";
+//     width: 4px;
+//     height: 4px;
+//     position: absolute;
+//     left: -18.5px; /*adjust manually*/
+//     top: 4px;
+//     background: var(--color-text);
+//     border-radius: 10000px;
+//     border: 4px solid var(--color-bg);
+//   }
+
+//   ul li:before {
+//     /* lines */
+//     content: "";
+//     position: absolute;
+//     left: -13px; /* adjust manually */
+//     border-left: 1px solid var(--color-border);
+//     height: 100%;
+//     width: 1px;
+//     margin-top: 4px;
+//   }
+
+//   ul li:first-child:before {
+//     /* first li's line */
+//     top: 6px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+//   }
+
+//   ul li:last-child:before {
+//     /* last li's line */
+//     height: 6px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+//   }
+// }
+
+.date {
+  font-size: $font-size-caption;
+  text-transform: uppercase;
+  color: $color-gray-50;
+}
+
+.thumb {
+  p {
+    color: $color-gray-50;
+  }
+  h1 {
+    margin-top: 8px;
+    font-size: $font-size-title;
+    font-weight: 600;
+    margin-bottom: 4px;
+    @media (max-width: $breakpoint-medium) {
+      font-size: $font-size-subheading;
+    }
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a:focus-visible .thumb {
+    transition: outline-offset 0.25s ease;
+    outline-offset: 4px;
+    outline-color: $color-primary;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+}
+
+.thumb-image {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 24px;
+  object-fit: cover;
+  filter: saturate(0%);
+}
+
+a:hover .thumb {
+  h1 {
+    text-decoration: underline;
+  }
+  .thumb-image {
+    filter: saturate(100%);
+  }
+}
+
+.feed {
+  margin-top: 144px;
+}
+
+.blurry-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(var(--color-bg-rgb), 0.7);
+  backdrop-filter: blur(12px);
+  .MuiGrid-item {
+    padding-top: 0px !important;
+  }
+
+  //   :before {
+  //     background-color: rgba(var(--color-bg-rgb), 0.1);
+  //     backdrop-filter: blur(5px);
+  //     position: absolute;
+  //     z-index: -1;
+  //     top: 0;
+  //     left: -100%;
+  //     content: "";
+  //     width: 1000%;
+  //     height: 100%;
+  //
+}
+
+.feed-border {
+  width: 50px;
+  z-index: 10;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #000) 0 100%;
+}
+
+.feed-filters {
+  border-bottom: 1px solid var(--color-border);
+  padding: 24px 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  will-change: transform;
+  user-select: none;
+  cursor: grab;
+}
+
+.feed-items {
+  display: flex;
+  gap: 8px;
+}
+
+.feed-button {
+  border-radius: 100000px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: $font-size-base;
+  font-family: $font-stack;
+  text-transform: capitalize;
+  background: none;
+  color: var(--color-text);
+}
+.feed-button:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+.feed-button-active {
+  border-radius: 100000px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: $font-size-base;
+  font-family: $font-stack;
+  text-transform: capitalize;
+  background: $color-secondary;
+  color: $color-white;
+}
+
+.feed-thumb {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 40px;
+  list-style-type: none;
+
+  @media (max-width: $breakpoint-medium) {
+    margin-top: 0;
+  }
+}
+
+.post-header {
+  @media (max-width: $breakpoint-medium) {
+    margin-top: 40px;
+  }
+}
+
+.above-title {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 24px;
+}
+
+.breadcrumbs {
+  list-style-type: none;
+  display: flex;
+  li {
+    font-size: $font-size-caption;
+    text-transform: capitalize;
+    color: $color-gray-50;
+  }
+  li + li:before {
+    content: "→";
+    color: $color-gray-50;
+    margin: 0 8px;
+  }
+  a {
+    color: var(--color-text);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.title {
+  position: sticky;
+  top: 0;
+  padding: 24px 0;
+  z-index: 1;
+  border-bottom: 1px solid var(--color-border);
+
+  h1 {
+    font-size: $font-size-title;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  p {
+    color: $color-gray-50;
+  }
+}
+
+.below-title {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 960px) {
+    margin-top: 0px;
+  }
+}
+
+.tags {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  background: var(--color-border);
+  padding: 4px 8px 2px;
+  border-radius: 10000px;
+  font-size: $font-size-base;
+}
+
+article {
+  margin-top: 48px;
+  p {
+    font-size: $font-size-body;
+    line-height: $line-height;
+    margin-bottom: 16px;
+  }
+  p:last-child {
+    margin-bottom: 0px;
+  }
+  p a {
+    color: var(--color-link);
+  }
+  p a:hover {
+    text-decoration: underline;
+  }
+  .gatsby-resp-image-image,
+  img {
+    max-width: 100%;
+    min-width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: none;
+    box-shadow: none !important;
+  }
+  h1 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: $font-size-heading;
+  }
+  h2 {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: $font-size-title;
+  }
+  h3 {
+    margin-top: 40px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: $font-size-body;
+  }
+}
+
+.featured-image {
+  width: 100%;
+  height: 496px;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-bottom: 64px;
+  @media (max-width: $breakpoint-medium) {
+    margin-bottom: 0px;
+  }
+}
+
+.article-footer {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+/**
+* ----------------------------------------------
+* Demo styles
+* ----------------------------------------------
+**/
+.accordion {
+}
+
+.accordion__item + .accordion__item {
+}
+
+.accordion__button {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  display: flex;
+}
+
+.accordion__button:focus {
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  p {
+    flex-grow: 0;
+  }
+  hr {
+    height: 1px;
+    flex-grow: 2;
+    background: var(--color-border);
+    border: none;
+  }
+  @media (max-width: $breakpoint-small) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    hr {
+      display: none;
+    }
+    p:not(:first-child) {
+      font-size: $font-size-caption;
+    }
+  }
+}
+
+.accordion-item {
+  margin-bottom: 16px;
+}
+
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion__button:hover {
+  text-decoration: underline;
+}
+
+.accordion__button:before {
+  content: "";
+  margin-top: 7px;
+  margin-right: 8px;
+  width: 0;
+  height: 0;
+  border-style: inset;
+  border-width: 3px 0 3px 5px;
+  border-color: transparent transparent transparent var(--color-text);
+  -webkit-transform: rotate(360deg);
+  transition: transform linear 0.1s;
+}
+
+.accordion__button[aria-expanded="true"]::before,
+.accordion__button[aria-selected="true"]::before {
+  transform: rotate(450deg);
+}
+
+[hidden] {
+  display: none;
+}
+
+.accordion__panel {
+  padding-top: 24px;
+  padding-left: 4px;
+  padding-bottom: 24px;
+  line-height: $line-height;
+  // animation: openAccordion 0.1s ease-in;
+  p {
+    margin-bottom: 24px;
+    line-height: $line-height;
+  }
+}
+
+@keyframes openAccordion {
+  0% {
+    transform: translateY(-1%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.stepper {
+  padding-left: 12px;
+  list-style-type: none;
+}
+.stepper li {
+  position: relative; /* so that pseudoelements are positioned relatively to their "li"s*/
+  /* use padding-bottom instead of margin-bottom.*/
+  margin-bottom: 0; /* This overrides previously specified margin-bottom */
+  padding-bottom: 12px;
+  line-height: $line-height;
+}
+
+.stepper li:after {
+  /* bullets */
+  content: "";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: -18.5px; /*adjust manually*/
+  top: 4px;
+  background: var(--color-text);
+  border-radius: 10000px;
+  border: 4px solid var(--color-bg);
+}
+
+.stepper li:before {
+  /* lines */
+  content: "";
+  position: absolute;
+  left: -13px; /* adjust manually */
+  border-left: 1px solid var(--color-border);
+  height: 100%;
+  width: 1px;
+  margin-top: 4px;
+}
+
+.stepper li:first-child:before {
+  /* first li's line */
+  top: 6px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+}
+
+.stepper li:last-child:before {
+  /* last li's line */
+  height: 6px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+}

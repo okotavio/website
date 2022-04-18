@@ -17,22 +17,20 @@ const Home = ({ data }) => {
   const gutter = 5
 
   return (
-    <Layout pageTitle="Home">
+    <Layout pageTitle="Otávio Vidal">
+    <div className="hero">
     <Container>
-    <Grid container spacing={gutter}>
-      
-      <Grid item lg={2} />
-      <Grid item lg={8}>
-      <div className="hero">
-      <h1>Currently designing traveling experiences at <a href="https://hopper.com/" target="_blank">Hopper</a>.</h1>
-      <h1>Front-end development enthusiast, mentoring at <a href="https://adplist.org/mentors/otavio-vidal" target="_blank">ADPList</a> and soon-to-be talking about design on my <a href="https://www.youtube.com/channel/UCENKqmzfaop3NyY0eUZLl1w" target="_blank">YouTube channel</a>.</h1>
-      <h1>Previously, I led a design systems team at <a href="https://quintoandar.com.br/" target="_blank">QuintoAndar</a>, designing the building blocks of the biggest proptech in Latin America.</h1>
-      </div>
+      <Grid container>
+      <Grid item lg={6}>
+      <h1>Crafting systems through design and code.</h1>
       </Grid>
-      <Grid item lg={2} />
-
+      <Grid item lg={4} />
+      <Grid item lg={5}>
+      <p>Fluent is an open-source, cross-platform design system that gives designers and developers the frameworks they need to create engaging product.</p>
+      </Grid>
       </Grid>
       </Container>
+      </div>
 
       <BlogItems items={data} />
 
@@ -43,10 +41,18 @@ const Home = ({ data }) => {
 
     <HomeSection title="Work">
 
-      <WorkSection title="Hopper" subtitle="Montreal, Canada">
+      <WorkSection title="Delivery Hero" subtitle="Berlin, Germany">
       <Accordion allowZeroExpanded="true">
-      <WorkAccordion title="Senior Product Designer" subtitle="Dec 2021 — present">
-        I currently work in the App Experience team evolving and maintaining a SDUI-based design system for native iOS and Android applications.
+      <WorkAccordion title="Senior Product Designer, Design Systems" subtitle="Apr 2022 — present">
+      I currently work in the Design Engineering team focused on a customer-facing design system called Bento.
+      </WorkAccordion>
+      </Accordion>
+      </WorkSection>
+
+      <WorkSection title="Hopper" subtitle="Remote for Montreal, Canada">
+      <Accordion allowZeroExpanded="true">
+      <WorkAccordion title="Senior Product Designer, Design Systems" subtitle="Dec 2021 — Mar 2022">
+      I worked in the Growth Foundation team designing a server-driven design system called Remote UI. Paralel to design systems work, I designed cross-company features such as user authentication, social referrals and a configurable homepage.
       </WorkAccordion>
       </Accordion>
       </WorkSection>
@@ -165,7 +171,7 @@ query MyQuery {
         image {
           childImageSharp {
             gatsbyImageData(
-              height: 400
+              height: 1100
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )

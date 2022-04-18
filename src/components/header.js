@@ -11,8 +11,8 @@ const Header = ({  }) => {
   const gutter = 5
 
   return (
-    <Container>
     <header>
+    <Container>
     <Grid container spacing={gutter} alignItems="center">
     <Grid item lg={2} md={2}>
     <a className="skip-content" href="#main">
@@ -27,11 +27,13 @@ const Header = ({  }) => {
       </Box> 
     </Grid>
 
+    {/*
     <Grid item lg={10} md={10} sm={0} xs={0}>
         <Box sx={{ display: { md:'block', sm:'none', xs:'none' } }}>
           <Link to="/">Otávio Vidal</Link>
         </Box>
     </Grid>
+    */}
  
     <Grid item lg={0} md={0} sm={12} xs={12}>
       <Box sx={{ display: { xl:'none', lg:'none', md:'none', sm:'block', xs:'block' } }}>
@@ -47,8 +49,8 @@ const Header = ({  }) => {
     </Grid>
 
     </Grid>
-    </header>
     </Container>
+    </header>
   )
 }
 

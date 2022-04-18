@@ -8,12 +8,13 @@ const Footer = ({  }) => {
   const gutter = 5
 
   return (
-    <Container>
     <footer>
+    <Container>
     <Grid container spacing={gutter}>
     <Grid item lg={10}>
         <ul>
           <li><a href="https://www.figma.com/@okotavio" target="_blank" rel="noreferrer">Figma</a></li>
+          <li><a href="https://github.com/okotavio" target="_blank" rel="noreferrer">Github</a></li>
           <li><a href="https://www.linkedin.com/in/otaviovidal/" target="_blank" rel="noreferrer">Linkedin</a></li>
           <li><a href="https://drive.google.com/file/d/1_nsprB3PGrtYcXfJrhbidR1VktYhjVvz/view" target="_blank" rel="noreferrer">Resume</a></li>
         </ul>
@@ -23,13 +24,13 @@ const Footer = ({  }) => {
     <Grid item lg={2}>
     <Grid container justifyContent="flex-end">
         <a href="mailto:otavioluisvidal@gmail.com" target="_blank" rel="noreferrer" className="button">
-          Say hello →
+          Get in touch
         </a>
     </Grid>
     </Grid>
     </Grid>
-    </footer>
     </Container>
+    </footer>
   )
 }
 

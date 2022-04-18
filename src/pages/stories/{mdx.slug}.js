@@ -19,10 +19,12 @@ const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
     <div className="post-header">
+    <Container>
     <GatsbyImage image={featuredImage} className="featured-image" />
+    </Container>
     </div>
 
-    <Container>
+    {/* <Container>
     <Grid container spacing={gutter}>
     <Grid item lg={2} />
     <Grid item lg={8} md={10} sm={12} xs={12}>
@@ -38,10 +40,10 @@ const BlogPost = ({ data }) => {
     
     </Grid>
     </Grid>
-    </Container>
+    </Container> */}
 
     <div className="post">
-    <div className="blurry-sticky">
+    {/* <div className="blurry-sticky">
 
     <Container>
     <Grid container spacing={gutter}>
@@ -57,18 +59,25 @@ const BlogPost = ({ data }) => {
     </Grid>
     </Grid>
     </Container>
-    </div>
+    </div> */}
 
     <Container>
     <Grid container spacing={gutter}>
-    <Grid item lg={2} />
-    <Grid item lg={8} md={10} sm={12} xs={12}>
+
+    <Grid item lg={3} md={3} sm={12} xs={12}>
+    <div className="title" id="main">
+    <h1>{data.mdx.frontmatter.title}</h1>
+    <p>{data.mdx.frontmatter.subtitle}</p>
+    </div>
+    </Grid>
+
+    <Grid item lg={6} md={6} sm={12} xs={12}>
     
-    <div className="below-title">
+    {/* <div className="below-title">
 
     <p className="date">Written on {data.mdx.frontmatter.date}</p>
 
-    </div>
+    </div> */}
 
     <article>
     <MDXRenderer>

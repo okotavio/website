@@ -5,10 +5,80 @@
 }
 
 @font-face {
+  font-family: "Azeret";
+  src: url("./fonts/azeret.woff2");
+  font-weight: 100 1000;
+}
+
+@font-face {
   font-family: "Mels";
   src: url("./fonts/Mels-Italic.woff2");
   font-weight: 400;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Martian";
+  src: url("./fonts/MartianMonoVF.woff2");
+  font-weight: 100 1000;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut400.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut400italic.woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut500.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut500italic.woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut600.woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut600italic.woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut700.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Uncut";
+  src: url("./fonts/uncut700italic.woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Biz";
+  src: url("./fonts/biz.woff2");
+  font-weight: 400;
 }
 
 @font-face {
@@ -58,4 +128,28 @@
   font-family: "Mint";
   src: url("./fonts/Mint/MintGroteskHeavyTrial.woff2");
   font-weight: 900;
+}
+
+@font-face {
+  font-family: "Authentic";
+  src: url("./fonts/AUTHENTICSans-60.woff2");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Authentic";
+  src: url("./fonts/AUTHENTICSans-90.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Authentic";
+  src: url("./fonts/AUTHENTICSans-130.woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Authentic";
+  src: url("./fonts/AUTHENTICSans-150.woff2");
+  font-weight: 800;
 }

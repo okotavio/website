@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Container from "../components/container"
+import Grid from '@mui/material/Grid'
 
 const Thumb = ( props ) => {
 
@@ -23,18 +25,27 @@ const Thumb = ( props ) => {
 
     return mousePosition
   }
-    
   
   const {x, y} = useMouse();
+
+  const gutter = 5
 
   return (
     
     <Link to={props.url}>
     <div className="thumb">
         <GatsbyImage image={props.img} className="thumb-image" />
-        <p className="date">{props.date}</p>
+        <div className="thumb-content">
+        <Grid container>
+        <Grid item lg={5}>
         <h1>{props.title}</h1>
+        </Grid>
+        <Grid item lg={6}/>
+        <Grid item lg={4}>
         <p>{props.subtitle}</p>
+        </Grid>
+        </Grid>
+      </div>
     </div>
     </Link>
   )

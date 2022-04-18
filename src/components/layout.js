@@ -9,7 +9,7 @@ export default function Layout({ children, pageTitle, image, description }) {
   return (
     <>
     <Helmet>
-      <title>{pageTitle} ✺ Otávio Vidal</title>
+      <title>{pageTitle}</title>
       <meta charSet="utf-8" />
       <meta property="og:title" content={pageTitle}/>
       <meta property="og:description" content={description}/>

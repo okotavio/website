@@ -4,9 +4,9 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 import Thumb from "../components/thumb"
 import Container from "../components/container"
 import Grid from '@mui/material/Grid'
-import smoothscroll from 'smoothscroll-polyfill'
+// import smoothscroll from 'smoothscroll-polyfill'
 
-smoothscroll.polyfill();
+// smoothscroll.polyfill();
 
 const getCategories = items => {
     let categoryItems = items.map(item => {
@@ -55,19 +55,17 @@ class BlogItems extends Component {
     const gutter = 5
 
     return (
-      <div className="feed" ref={this.scrollDiv}>
+      // <div className="feed" ref={this.scrollDiv}>
+      <div className="feed">
       <div className="blurry-sticky" id="main">
       <Container>
-      <Grid container spacing={gutter}>
-      <Grid item lg={2} md={0} />
-      <Grid item lg={8} md={12} sm={12} xs={12}>
       <ScrollContainer className="feed-filters" horizontal>
       <div className="feed-items">
         {this.state.categories.map((category, index) => {
             return (
-                <div onClick={() => {
-                  this.scrollDiv.current.scrollIntoView({ behavior: 'smooth' });
-                }}>
+                // <div onClick={() => {
+                //   this.scrollDiv.current.scrollIntoView();
+                // }}>
                 <button
                 type="button"
                 key={index}
@@ -78,19 +76,14 @@ class BlogItems extends Component {
               >
                 {category}
               </button>
-              </div>
+              // </div>
             )
         })}
       </div>
       </ScrollContainer>
-      </Grid>
-      </Grid>
       </Container>
       </div>
       <Container>
-      <Grid container spacing={gutter}>
-      <Grid item lg={2} md={0} />
-      <Grid item lg={8} md={12} sm={12} xs={12}>
         <ul className="feed-thumb">
         {this.state.blogPostItems.map(edge => {
           return (
@@ -102,8 +95,6 @@ class BlogItems extends Component {
           )
         })}
       </ul>
-      </Grid>
-      </Grid>
       </Container>
       </div>
     )

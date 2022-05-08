@@ -201,7 +201,7 @@ a.button {
   background: $color-primary;
   color: $color-black;
   border-radius: 10000px;
-  transition: .3s ease-out;
+  transition: .2s ease-out;
 }
 
 a.button:hover {
@@ -528,11 +528,11 @@ a:hover .thumb {
   background: none;
   color: var(--color-text);
   border: none;
+  transition: .2s ease-out;
 }
 .feed-button:hover {
   background: var(--color-border);
   color: var(--color-text);
-  transition: .3s ease-out;
 }
 .feed-button-active {
   border-radius: 100000px;

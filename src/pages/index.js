@@ -26,7 +26,7 @@ const Home = ({ data }) => {
       </Grid>
       <Grid item lg={4} />
       <Grid item lg={5}>
-      <p>Fluent is an open-source, cross-platform design system that gives designers and developers the frameworks they need to create engaging product.</p>
+      <p>Product designer focused on design systems at Delivery Hero in Berlin. Previously led design systems teams at Hopper and QuintoAndar. </p>
       </Grid>
       </Grid>
       </Container>
